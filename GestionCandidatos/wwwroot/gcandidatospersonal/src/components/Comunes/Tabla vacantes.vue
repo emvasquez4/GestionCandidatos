@@ -21,10 +21,23 @@ export default {
           id: 1,
           vacante: 'Director de Proyectos',
           CantVacante: '2',
-          salario: '$3000.00',  
+          salario: '$3000.00',           
         },
+        {
+          id: 2,
+          vacante: 'Developer backend',
+          CantVacante: '3',
+          salario: '$2,500.00',
+        },
+        {         
+          id: 3,
+          vacante: 'Secretario',
+          CantVacante: '1',
+          salario: '$560.00', 
+        }
         // ...otras vacantes
       ],
+      
       headers: [
         { text: 'Vacantes', value: 'vacante' },
         { text: 'Disponibles', value: 'CantVacante' },
