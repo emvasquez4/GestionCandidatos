@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginForm from '../views/LoginForm.vue'
 import Users from '../views/CrearUsuario.vue'
 import Vacantes from '../views/CrearVacantes.vue'
+import Candidatos from '../views/CrearCandidatos.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/crearvacante',
     name: 'crearvacante',
     component: Vacantes
+  },
+  {
+    path: '/crearcandidato',
+    name: 'crearcandidato',
+    component: Candidatos
   },
 ]
 
