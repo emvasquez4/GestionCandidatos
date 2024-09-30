@@ -1,6 +1,6 @@
 <template>
  <div>
-  <CrearUsuario />
+   <CrearUsuario />
    <TablaUsuario />
  </div>
 </template>
