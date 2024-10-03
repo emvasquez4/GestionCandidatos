@@ -9,11 +9,11 @@
       <v-card class="pa-3">
         <v-card-title class="headline">REGISTRO</v-card-title>
         <v-form>
-          <v-text-field label="Nombre" v-model="firstName"></v-text-field>
-          <v-text-field label="Apellido" v-model="lastName"></v-text-field>
-          <v-text-field label="Correo electrónico" v-model="email"></v-text-field>
-          <v-text-field label="Contraseña" v-model="password" type="password"></v-text-field>
-          <v-text-field label="Confirmar contraseña" v-model="confirmPassword" type="password"></v-text-field>
+          <v-text-field label="Nombre" v-model="firstName" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Apellido" v-model="lastName" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Correo electrónico" v-model="email" :rules="[rules.required, rules.email]"></v-text-field>
+          <v-text-field label="Contraseña" v-model="password" type="password" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Confirmar contraseña" v-model="confirmPassword" type="password" :rules="[rules.required]"></v-text-field>
           <v-btn color="primary" @click="register">Registrarse</v-btn>
             <v-btn color="primary" @click="Cerrar">Cerrar</v-btn>
         </v-form>
@@ -33,6 +33,11 @@ export default {
       password: '',
       confirmPassword: '',
       dialog: false,
+      rules: 
+      {
+        required: value => !!value || 'Este campo es obligatorio',       
+        email: value => /.+@.+\..+/.test(value) || 'Correo electrónico no válido'        
+      }
     };
   },
   methods: {

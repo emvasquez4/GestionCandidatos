@@ -9,9 +9,9 @@
           <v-card class="pa-3">
             <v-card-title class="headline"><b>SOLICITUD DE PERMISOS</b></v-card-title>
             <v-form>
-              <v-text-field label="Empleado" v-model="form.empleado" required></v-text-field>
-              <v-text-field label="Desde Fecha" v-model="form.desdeFecha" type="date" required></v-text-field>
-              <v-text-field label="Hasta Fecha" v-model="form.hastaFecha" type="date" required></v-text-field>
+              <v-text-field label="Empleado" v-model="form.empleado" :rules="[rules.required]"></v-text-field>
+              <v-text-field label="Desde Fecha" v-model="form.desdeFecha" type="date" :rules="[rules.required]"></v-text-field>
+              <v-text-field label="Hasta Fecha" v-model="form.hastaFecha" type="date" :rules="[rules.required]"></v-text-field>
               <v-textarea label="Causa de Ausencia" v-model="form.causa" required></v-textarea>
               
               <v-divider class="my-4"></v-divider>
@@ -33,7 +33,11 @@
           empleado: '',
           desdeFecha: '',
           hastaFecha: '',
-          causa: ''        
+          causa: '',   
+          rules: 
+          {
+        required: value => !!value || 'Este campo es obligatorio'       
+          }     
       };
     },
     methods: {
