@@ -34,7 +34,7 @@
       register() {
         // Lógica para enviar los datos del formulario al servidor
         // Puedes usar Axios o cualquier otra librería para hacer la solicitud HTTP
-        console.log('Datos de registro:', this.vacante, this.cantVacantes, this.salario);
+        console.log('setcrearVacanteState', this.vacante, this.cantVacantes, this.salario);
       },
       Cerrar(){
          this.$store.commit('setcrearVacanteState', !this.$store.state.crearVacanteState);

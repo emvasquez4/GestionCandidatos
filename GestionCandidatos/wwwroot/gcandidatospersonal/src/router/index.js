@@ -5,6 +5,9 @@ import LoginForm from '../views/LoginForm.vue'
 import Users from '../views/CrearUsuario.vue'
 import Vacantes from '../views/CrearVacantes.vue'
 import Candidatos from '../views/CrearCandidatos.vue'
+import Permisos from '../views/CrearPermisos.vue'
+import ProgEntrevista from '../views/ProgramarEntrevista.vue'
+
 
 Vue.use(VueRouter)
 
@@ -41,6 +44,16 @@ const routes = [
     path: '/crearcandidato',
     name: 'crearcandidato',
     component: Candidatos
+  },
+  {
+    path: '/crearpermisos',
+    name: 'crearpermisos',
+    component: Permisos
+  },
+  {
+    path: '/progEntrevista',
+    name: 'progEntrevista',
+    component: ProgEntrevista
   },
 ]
 

@@ -6,13 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     crearUsuarioState: false,
-  },
-  state: {
     crearVacanteState: false,
-  },
-  state: {
     crearCandidatoState: false,
-  },
+    crearPermisoState: false,
+    progEntrevistaState: false,
+  },  
   getters: {
   },
   mutations: {
@@ -27,17 +25,16 @@ export default new Vuex.Store({
     },
     setCandidato(state, candidato) {
       state.candidato = candidato; // Mutación para establecer los datos del candidato
-    }
+    },
+    setcrearPermisoState(state, newValue){
+      state.crearPermisoState = !state.crearPermisoState
+    },
+    setprogEntrevistaState(state, newValue){
+      state.progEntrevistaState = !state.progEntrevistaState
+    },
   },
   actions: {
-    verCandidato({ commit, state }, id) {
-      const candidato = state.candidatos.find(c => c.id === id);
-      if (candidato) {
-        commit('setCandidato', candidato);
-      } else {
-        console.error('Candidato no encontrado');
-      }
-    }
+   
   },
   modules: {
   }
