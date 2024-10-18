@@ -7,14 +7,20 @@ namespace GestionCandidatos.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+
+
+
+        public HomeController(ILogger<HomeController> logger, IConfiguration _configuration)
         {
             _logger = logger;
+             _configuration = configuration;
         }
 
         public IActionResult Index()
         {
+            ViewBag.GestionApi = configuration.GetValue<string>("GestionCandidatosApi");
             return View();
         }
 

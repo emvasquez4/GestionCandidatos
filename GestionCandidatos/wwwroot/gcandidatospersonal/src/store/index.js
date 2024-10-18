@@ -6,8 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     crearUsuarioState: false,
+    user:{
+      isLoggedIn: false, //se encuentra logueado
+      roles: [], //roles a manejar este usuario
+    },
   },
   getters: {
+    isLoggedIn: state => state.user.isLoggedIn,
+    userRoles: state => state.user.roles,
   },
   mutations: {
     setcrearUsuarioState(state, newValue){

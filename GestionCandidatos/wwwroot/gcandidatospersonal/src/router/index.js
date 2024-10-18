@@ -1,25 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
 import LoginForm from '../views/LoginForm.vue'
-import Users from '../views/CrearUsuario.vue'
+import Users from '../views/CrearUsuario.vue' //importamos el componente de vista
+import MiVista from '../views/MiVista.vue' 
 
 Vue.use(VueRouter)
 
 const routes = [
-  /*{
+  {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about"  '../views/AboutView.vue')
-  },*/
   {
     path: '/',
     name: 'loginform',
@@ -29,6 +22,11 @@ const routes = [
     path: '/crearusuario',
     name: 'crearusuario',
     component: Users
+  },
+  {
+    path: '/mivista',
+    name: 'mivista',
+    component: MiVista
   },
 ]
 

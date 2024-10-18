@@ -1,8 +1,7 @@
 <template>
   <v-app>
-    
     <Barra />
-    <v-main>
+    <v-main style="background-color: #f5f5f5;">
       <router-view/>
     </v-main>
   </v-app>

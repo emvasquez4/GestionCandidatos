@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|e:\\backup\\proyectos\\sistemagestionpersonal\\gestioncandidatos\\gestioncandidatos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|solutionrelative:gestioncandidatos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|e:\\backup\\proyectos\\sistemagestionpersonal\\gestioncandidatos\\gestioncandidatos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|solutionrelative:gestioncandidatos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|e:\\backup\\proyectos\\sistemagestionpersonal\\gestioncandidatos\\gestioncandidatos\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|solutionrelative:gestioncandidatos\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|e:\\backup\\proyectos\\sistemagestionpersonal\\gestioncandidatos\\gestioncandidatos\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|solutionrelative:gestioncandidatos\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|e:\\backup\\proyectos\\sistemagestionpersonal\\gestioncandidatos\\gestioncandidatos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85AA7E6F-5CFA-4362-8D77-598B4B76FEB2}|GestionCandidatos\\GestionCandidatos.csproj|solutionrelative:gestioncandidatos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Program.cs",
+              "RelativeDocumentMoniker": "GestionCandidatos\\Program.cs",
+              "ToolTip": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Program.cs",
+              "RelativeToolTip": "GestionCandidatos\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T02:04:48.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Startup.cs",
+              "RelativeDocumentMoniker": "GestionCandidatos\\Startup.cs",
+              "ToolTip": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Startup.cs",
+              "RelativeToolTip": "GestionCandidatos\\Startup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T01:55:24.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GestionCandidatos\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GestionCandidatos\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T01:48:51.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\appsettings.json",
+              "RelativeDocumentMoniker": "GestionCandidatos\\appsettings.json",
+              "ToolTip": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\appsettings.json",
+              "RelativeToolTip": "GestionCandidatos\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-03T01:47:20.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "GestionCandidatos\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "GestionCandidatos\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-03T01:41:15.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

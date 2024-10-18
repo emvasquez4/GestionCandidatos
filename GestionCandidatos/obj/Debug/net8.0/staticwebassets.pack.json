@@ -1,0 +1,393 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GestionCandidatos.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GestionCandidatos.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\.gitignore",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\.gitignore"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\README.md",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\README.md"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\babel.config.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\babel.config.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\jsconfig.json",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\jsconfig.json"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\package-lock.json",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\package-lock.json"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\package.json",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\package.json"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\public\\favicon.ico",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\public\\favicon.ico"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\public\\index.html",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\public\\index.html"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\App.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\App.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\assets\\logo.png",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\assets\\logo.png"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\assets\\logo.svg",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\assets\\logo.svg"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\assets\\loguito.jpeg",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\assets\\loguito.jpeg"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\assets\\loguito2.png",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\assets\\loguito2.png"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\Comunes\\Tabla.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\Comunes\\Tabla.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\Comunes\\Toolbar.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\Comunes\\Toolbar.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\HelloWorld.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\HelloWorld.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\Login\\LoginForm.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\Login\\LoginForm.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\PruebaVista.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\PruebaVista.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\Usuarios\\CambiarContrasenia.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\Usuarios\\CambiarContrasenia.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\components\\Usuarios\\CrearUsuarios.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\components\\Usuarios\\CrearUsuarios.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\main.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\main.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\plugins\\vuetify.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\plugins\\vuetify.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\router\\index.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\router\\index.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\services\\Services.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\services\\Services.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\services\\Usuarios\\UsuariosServices.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\services\\Usuarios\\UsuariosServices.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\store\\index.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\store\\index.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\views\\AboutView.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\views\\AboutView.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\views\\CrearUsuario.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\views\\CrearUsuario.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\views\\HomeView.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\views\\HomeView.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\views\\LoginForm.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\views\\LoginForm.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\src\\views\\MiVista.vue",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\src\\views\\MiVista.vue"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\gcandidatospersonal\\vue.config.js",
+      "PackagePath": "staticwebassets\\gcandidatospersonal\\vue.config.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\backup\\Proyectos\\SistemaGestionPersonal\\GestionCandidatos\\GestionCandidatos\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GestionCandidatos.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.GestionCandidatos.props",
+      "PackagePath": "build\\GestionCandidatos.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.GestionCandidatos.props",
+      "PackagePath": "buildMultiTargeting\\GestionCandidatos.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.GestionCandidatos.props",
+      "PackagePath": "buildTransitive\\GestionCandidatos.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
