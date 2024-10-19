@@ -9,8 +9,9 @@
       </v-col>
     </v-row>
     <v-data-table :items="usuarios" :headers="headers">
-      <template v-slot:item.acciones="{ item }">
-        <v-btn @click="editarUsuario(item.id)" color="info">Editar</v-btn>
+      <template v-slot:item.acciones="{ item }">       
+        <v-btn @click="editarVacante(item.id)" color="info" class="mr-2">Editar</v-btn>
+        <v-btn @click="eliminarVacante(item.id)" color="#F32C52" class="mr-2">Eliminar</v-btn>
       </template>
     </v-data-table>
   </v-card>
