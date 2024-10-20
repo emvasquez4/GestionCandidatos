@@ -1,11 +1,27 @@
 <template>
   <div>
-    <h1>Bienvenido a la Página Principal</h1>
+   <Menu :permisos="permisos" />
   </div>
 </template>
 
 <script>
+import Menu from '../components/Comunes/Menu.vue';
+import {mapState} from 'vuex';
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Menu
+  },
+  computed: {
+    ...mapState(['permisos'])
+  },
+  data() {
+    return {
+    };
+  },
+  created() {
+  },
+  methods: {
+  }
 };
 </script>

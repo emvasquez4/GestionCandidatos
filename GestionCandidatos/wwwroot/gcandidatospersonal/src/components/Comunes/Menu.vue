@@ -2,49 +2,41 @@
 <template>
   <v-navigation-drawer app>
     <v-list>
-      <v-list-item v-for="item in menuItems" :key="item.title" :to="item.to">
-        <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+      <v-subheader>Menú</v-subheader>
+      <v-list-group
+        v-for="grupo in menuGrupos"
+        :key="grupo.view"
+        :prepend-icon="grupo.icon"
+      >
+        <template v-slot:activator>
+          <v-list-item-content>
+            <v-list-item-title>{{ grupo.view }}</v-list-item-title>
+          </v-list-item-content>
+        </template>
+        <v-list-item
+          v-for="permiso in grupo.permisos"
+          :key="permiso.id"
+          :to="permiso.to"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ permiso.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>{{ permiso.titulo }}</v-list-item-title>
+        </v-list-item>
+      </v-list-group>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
-  computed: {
-    ...mapGetters(['userRoles']),
-    menuItems() {
-      const allMenuItems = {
-        admin: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
-          { title: 'Users', icon: 'mdi-account', to: '/users' },
-        ],
-        editor: [
-          { title: 'Posts', icon: 'mdi-post', to: '/posts' },
-          { title: 'Comments', icon: 'mdi-comment', to: '/comments' },
-        ],
-        user: [
-          { title: 'Profile', icon: 'mdi-account', to: '/profile' },
-          { title: 'Settings', icon: 'mdi-settings', to: '/settings' },
-        ],
-      };
-
-      let items = [];
-      this.userRoles.forEach(role => {
-        if (allMenuItems[role]) {
-          items = items.concat(allMenuItems[role]);
-        }
-      });
-
-      return items;
-    },
+  props: {
+    permisos: Array
   },
+  computed: {
+    menuGrupos() {
+      return this.permisos;
+    }
+  }
 };
 </script>

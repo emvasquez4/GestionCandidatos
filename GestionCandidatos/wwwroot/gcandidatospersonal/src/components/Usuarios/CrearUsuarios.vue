@@ -14,7 +14,7 @@
            <v-text-field label="Username" v-model="info.username"></v-text-field>
           <v-text-field label="Correo electrónico" v-model="info.email" :rules="[rules.required, rules.email]"></v-text-field>
           <v-text-field label="Contraseña" v-model="info.password" type="password" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Confirmar contraseña" v-model="info.password2" type="password" type="password" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Confirmar contraseña" v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
 
 
           <v-text-field label="Nombre" v-model="firstName" ></v-text-field>

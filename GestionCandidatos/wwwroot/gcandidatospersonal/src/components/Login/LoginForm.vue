@@ -44,10 +44,18 @@ export default {
           return;
         }else{
           Services.UsuariosService.Login(this.model)
-            .then(response => {
+            .then(async response => {
               // Manejo de la respuesta exitosa
               if (response.data.token) {
-                  localStorage.setItem('token', response.data.token);
+                  sessionStorage.setItem('token', response.data.token);
+                  const userId = response.data.usuario.id;
+
+                  //obteniendo roles y permisos a pantalllas
+                  const roles = await Services.UsuariosRolesService.getUserRolPermiso('CODUSUARIO', userId.toString());
+                  const rolesAgrupados = roles.data;
+
+
+                  this.$store.commit('SET_PERMISOS', rolesAgrupados);
                   this.$router.push({ name: 'Home' });
                    this.Message = error.response?.data?.message || 'Se ha creado el usuario exitosamente.';
                   this.showSuccess = true;
