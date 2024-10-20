@@ -7,6 +7,9 @@ import Vacantes from '../views/CrearVacantes.vue';
 import Candidatos from '../views/CrearCandidatos.vue';
 import Permisos from '../views/CrearPermisos.vue';
 import ProgEntrevista from '../views/ProgramarEntrevista.vue';
+//reportes
+import reporteCandidato from '../components/reportes/reporteCandidatos.vue';
+import reportePermiso from '../components/reportes/reportePermiso.vue'
 
 Vue.use(VueRouter);
 
@@ -49,6 +52,16 @@ const routes = [
     path: '/progEntrevista',
     name: 'progEntrevista',
     component: ProgEntrevista
+  },
+  {
+    path: '/reporteCandidato',
+    name: 'reporteCandidato',
+    component: reporteCandidato
+  },
+  {
+    path: '/reportePermiso',
+    name: 'reportePermiso',
+    component: reportePermiso
   },
 ];
 
