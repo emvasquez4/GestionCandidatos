@@ -7,7 +7,8 @@ const  API_ROUTES = {
     ADD: 'Usuarios_Roles/addUsuario',
     UPDATE:`Usuarios_Roles/updateUsuario/`,
     DELETE: `Usuarios_Roles/deleteUsuario/`,
-    MENUS: 'Usuarios_Roles/GetUserRolePermiso'
+    MENUS: 'Usuarios_Roles/GetUserRolePermiso',
+    PERMISOS: 'Usuarios_Roles/getPermisosUsuarios'
   },
 };
 
@@ -45,6 +46,20 @@ const UsuariosRolesService = {
       return await apiClient.post(API_ROUTES.USERROL.MENUS, param);
     }catch(error){
       console.error('Error consultando usuario-rol:', error);
+      throw error;
+    }
+  },
+
+  async getUserPermiso(FiltroInicial, FiltroSecundario, FiltroTerciario){
+    try{
+      var param = {
+        "FiltroPrincipal": FiltroInicial,
+        "FiltroSecundario": FiltroSecundario,
+        "FiltroTerciario": FiltroTerciario
+      }
+      return await apiClient.post(API_ROUTES.USERROL.PERMISOS, param);
+    }catch(error){
+      console.error('Error consultando permisos', error);
       throw error;
     }
   },

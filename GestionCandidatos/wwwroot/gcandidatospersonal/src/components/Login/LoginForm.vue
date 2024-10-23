@@ -49,13 +49,13 @@ export default {
               if (response.data.token) {
                   sessionStorage.setItem('token', response.data.token);
                   const userId = response.data.usuario.id;
-
+                  this.$store.commit('SET_USER_ID', userId);
                   //obteniendo roles y permisos a pantalllas
                   const roles = await Services.UsuariosRolesService.getUserRolPermiso('CODUSUARIO', userId.toString());
                   const rolesAgrupados = roles.data;
 
 
-                  this.$store.commit('SET_PERMISOS', rolesAgrupados);
+                  this.$store.commit('SET_MENUS', rolesAgrupados);
                   this.$router.push({ name: 'Home' });
                    this.Message = error.response?.data?.message || 'Se ha creado el usuario exitosamente.';
                   this.showSuccess = true;

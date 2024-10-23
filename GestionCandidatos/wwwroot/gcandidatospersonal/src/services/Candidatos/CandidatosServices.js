@@ -4,7 +4,6 @@ import apiClient from '../Api/api';
 const  API_ROUTES = {
   CANDIDATOS: {
     GET_ALL: 'Candidatos/GetAllCandidatos',
-    
     ADD: 'Candidatos/addCandidato',
     UPDATE:`Candidatos/updateCandidato/`,
     DELETE: `Candidatos/deleteCandidato/`

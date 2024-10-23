@@ -1,7 +1,7 @@
 <template>
   <v-main>
      <v-dialog
-      v-model="$store.state.crearUsuarioState"
+      v-model="crearUsuarioState"
       persistent
       max-width="600px"
     >
@@ -15,13 +15,6 @@
           <v-text-field label="Correo electrónico" v-model="info.email" :rules="[rules.required, rules.email]"></v-text-field>
           <v-text-field label="Contraseña" v-model="info.password" type="password" :rules="[rules.required]"></v-text-field>
           <v-text-field label="Confirmar contraseña" v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
-
-
-          <v-text-field label="Nombre" v-model="firstName" ></v-text-field>
-          <v-text-field label="Apellido" v-model="lastName" ></v-text-field>
-          <v-text-field label="Correo electrónico" v-model="email" ></v-text-field>
-          <v-text-field label="Contraseña" v-model="password" type="password" ></v-text-field>
-          <v-text-field label="Confirmar contraseña" v-model="confirmPassword" ></v-text-field>
           <v-btn color="primary" @click="register">Registrarse</v-btn>
             <v-btn color="primary" @click="Cerrar">Cerrar</v-btn>
         </v-form>
@@ -47,6 +40,7 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapMutations } from 'vuex';
 import Services from '../../services/Services';
 export default {
   data() {
@@ -74,6 +68,10 @@ export default {
     'info.nombre': 'generateUsername',
     'info.apellido': 'generateUsername',
   },
+  computed: {
+    ...mapState(['crearUsuarioState']),
+    ...mapMutations(['setcrearUsuarioState'])
+  },
   methods: {
     register() {
      Services.UsuariosService.addUsuario(this.info)
@@ -91,7 +89,7 @@ export default {
         });
     },
     Cerrar(){
-       this.$store.commit('setcrearUsuarioState', !this.$store.state.crearUsuarioState);
+       this.setcrearUsuarioState();
        this.info= {
         nombre: '',
         apellido: '',
