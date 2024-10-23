@@ -9,10 +9,9 @@
           <v-card class="pa-3">
             <v-card-title class="headline"><b>PROGRAMAR ENTREVISTA</b></v-card-title>
             <v-form>
-              <v-text-field label="Candidato" v-model="candidato" :rules="[rules.required, rules.noNumbers]"></v-text-field>
-              <v-text-field label="Fecha" v-model="fecha" type="date" :rules="[rules.required]"></v-text-field>
-              <v-text-field label="Lugar" v-model="lugar" :rules="[rules.required]"></v-text-field>
-              <v-text-field label="Hora" v-model="hora" type="time" :rules="[rules.required]" @blur="formatTime"></v-text-field>
+              <v-text-field label="Candidato" v-model="info.candidato" :rules="[rules.required, rules.noNumbers]"></v-text-field>
+              <v-text-field label="Fecha" v-model="info.fecha" type="date" :rules="[rules.required]"></v-text-field>
+              <v-text-field label="Hora" v-model="info.hora" type="time" :rules="[rules.required]" @blur="formatTime"></v-text-field>
               
               <v-divider class="my-4"></v-divider>
               <div class="d-flex justify-content-end">
@@ -27,22 +26,23 @@
   </template>
   
   <script>
+  import Services from '../../services/Services';
   export default 
   {
     data() {
       return {
-        candiadto: '',
+        info:{
+        candidato: '',
         fecha: '',
-        lugar: '',
         hora: '',
         rules: 
         {
         required: value => !!value || 'Este campo es obligatorio',        
         positiveNumber: value => value >= 0 || 'El número debe ser positivo',
-        email: value => /.+@.+\..+/.test(value) || 'Correo electrónico no válido',      
         noNumbers: value => /^[a-zA-Z\s]*$/.test(value) || 'El campo no debe contener números',
         noLetters: value => /^[0-9]*$/.test(value) || 'El campo no debe contener letras'
-        }        
+        }  
+      }      
       };
     },
     methods: 
@@ -50,11 +50,36 @@
       guardar() 
       {
         // Lógica para guardar el formulario
+        if (this.$refs.form.validate()) {
+        // Por ejemplo, llamar a un servicio para guardar la entrevista
+        const nuevaEntrevista = {
+          candidato: this.info.candidato,
+          fecha: this.info.fecha,
+          hora: this.info.hora
+        };
+         // Simulación de guardado utilizando un servicio
+        Services.guardarEntrevista(nuevaEntrevista)
+          .then(() => {
+            console.log('Entrevista guardada con éxito:', nuevaEntrevista);
+            // Cerrar el diálogo después de guardar
+            this.cerrar();
+          })
+          .catch(error => {
+            console.error('Error al guardar la entrevista:', error);
+          });
+      }
       },
       cerrar() 
       {
         // Lógica para cerrar el formulario
-        this.$store.commit('setprogEntrevistaState', !this.$store.state.progEntrevistaState);
+       // this.$store.commit('setprogEntrevistaState', !this.$store.state.progEntrevistaState);
+        this.$store.commit('setprogEntrevistaState', false);
+        // Resetear los campos del formulario si es necesario
+        this.info = {
+          candidato: '',
+          fecha: '',
+          hora: ''
+        };
       },
       formatTime() {
       if (this.hora) {
