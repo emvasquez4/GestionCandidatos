@@ -27,9 +27,11 @@
   </template>
   
   <script>
+  import Services from '../../services/Services';
   export default {
     data() {
-      return {        
+      return {  
+      form:{      
           empleado: '',
           desdeFecha: '',
           hastaFecha: '',
@@ -37,18 +39,40 @@
           rules: 
           {
         required: value => !!value || 'Este campo es obligatorio'       
-          }     
+          } 
+        }    
       };
     },
     methods: {
       submitForm() {
         // Lógica para enviar el formulario
+        //console.log('Formulario enviado:', this.form);
+         // Validamos el formulario antes de enviarlo
+        if (!this.form.empleado || !this.form.desdeFecha || !this.form.hastaFecha || !this.form.causa) {
+          console.error('Por favor complete todos los campos.');
+        return;
+        }
+         // Lógica para enviar el formulario
         console.log('Formulario enviado:', this.form);
+         // Limpiar el formulario y cerrar el diálogo tras enviar
+        this.resetForm();
+        this.$store.commit('setcrearPermisoState', false);
       },
       cancelForm() {
         // Lógica para cancelar el formulario
-        console.log('Formulario cancelado');
+       // console.log('Formulario cancelado');
         this.$store.commit('setcrearPermisoState', false);
+        this.resetForm();
+      },
+    
+      resetForm() {
+        // Limpia los valores del formulario
+        this.form = {
+          empleado: '',
+          desdeFecha: '',
+          hastaFecha: '',
+          causa: ''
+        };
       }
     }
   };

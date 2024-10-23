@@ -31,11 +31,11 @@
 <script>
 export default {
   props: {
-    permisos: Array
+    menus: Array
   },
   computed: {
     menuGrupos() {
-      return this.permisos;
+      return this.menus;
     }
   }
 };

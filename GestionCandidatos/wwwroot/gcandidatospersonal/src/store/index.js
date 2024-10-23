@@ -5,12 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    userId: null,
     crearUsuarioState: false,
     user:{
       isLoggedIn: false, //se encuentra logueado
       roles: [], //roles a manejar este usuario
     },
-    permisos:[],
+    menus:[],
     crearVacanteState: false,
     crearCandidatoState: false,
     crearPermisoState: false,
@@ -22,8 +23,11 @@ export default new Vuex.Store({
     userRoles: state => state.user.roles,
   },
   mutations: {
-    SET_PERMISOS(state, permisos) {
-      state.permisos = permisos;
+    SET_MENUS(state, menus) {
+      state.menus = menus;
+    },
+    SET_USER_ID(state, userId) {
+      state.userId = userId;
     },
     setcrearUsuarioState(state, newValue){
       state.crearUsuarioState = !state.crearUsuarioState

@@ -4,14 +4,11 @@
       <v-col cols="10"> <!-- Ajusta el tamaño de la columna para el título -->
         <v-card-title class="text-left">Usuarios</v-card-title> <!-- Añade 'text-left' para alinear el título a la izquierda -->
       </v-col>
-      <v-col cols="2"  style="padding-rigth: 3em;"> <!-- Ajusta el tamaño de la columna para el botón -->
-        <v-btn @click="mostrarFormulario" color="primary" class="float-right">Nuevo</v-btn> <!-- Añade 'float-right' para alinear el botón a la derecha -->
-      </v-col>
     </v-row>
     <v-data-table :items="usuarios" :headers="headers">
       <template v-slot:item.acciones="{ item }">       
-        <v-btn @click="editarVacante(item.id)" color="info" class="mr-2">Editar</v-btn>
-        <v-btn @click="eliminarVacante(item.id)" color="#F32C52" class="mr-2">Eliminar</v-btn>
+        <v-btn @click="editarUsuario(item.id)" color="info" class="mr-2">Editar</v-btn>
+        <v-btn @click="eliminarUsuario(item.id)" color="#F32C52" class="mr-2">Eliminar</v-btn>
       </template>
     </v-data-table>
   </v-card>
@@ -48,7 +45,6 @@ export default {
   methods: {
     mostrarFormulario() {
       // Lógica para mostrar el formulario de nuevo usuario
-      console.log("opne", !this.$store.state.crearUsuarioState)
        this.$store.commit('setcrearUsuarioState', !this.$store.state.crearUsuarioState);
     },
     editarUsuario(id) {

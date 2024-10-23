@@ -1,6 +1,6 @@
 <template>
   <div>
-   <Menu :permisos="permisos" />
+   <Menu :menus="menus" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     Menu
   },
   computed: {
-    ...mapState(['permisos'])
+    ...mapState(['menus'])
   },
   data() {
     return {
