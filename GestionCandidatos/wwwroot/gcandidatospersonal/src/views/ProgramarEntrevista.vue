@@ -6,7 +6,7 @@
    </template>
    
    <script>
-     import TablaProgEntrevista from '../components/Comunes/Tabla Entrevistas.vue'      
+     import TablaProgEntrevista from '../components/Comunes/Tabla ProgEntrevistas.vue'      
      import FrmProg_Entrevista from '@/components/Entrevistas/frmProg_Entrevista.vue';
    
      export default {
