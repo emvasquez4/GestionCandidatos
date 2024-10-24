@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     mostrarFormulario() {
-      // Lógica para mostrar el formulario
+      // Lógica para mostrar el formulario.
       console.log("opne", !this.$store.state.crearVacanteState)
        this.$store.commit('setcrearVacanteState', !this.$store.state.crearVacanteState);
     },

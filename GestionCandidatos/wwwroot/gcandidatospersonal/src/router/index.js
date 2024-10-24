@@ -10,7 +10,8 @@ import ProgEntrevista from '../views/ProgramarEntrevista.vue';
 import Entrevista from '../views/crearEntrevista.vue';
 //reportes
 import reporteCandidato from '../components/reportes/reporteCandidatos.vue';
-import reportePermiso from '../components/reportes/reportePermiso.vue'
+import reportePermiso from '../components/reportes/reportePermiso.vue';
+import ReporteEntrevista from '../components/Entrevistas/ReporteEntrevista.vue';
 
 Vue.use(VueRouter);
 
@@ -68,6 +69,11 @@ const routes = [
     path: '/reportePermiso',
     name: 'reportePermiso',
     component: reportePermiso
+  },
+  {
+    path: '/reporteEntrevista',
+    name: 'reporteEntrevista',
+    component: ReporteEntrevista
   },
 ];
 
