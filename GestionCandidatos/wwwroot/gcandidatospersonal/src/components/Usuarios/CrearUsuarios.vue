@@ -3,7 +3,7 @@
      <v-dialog
       v-model="crearUsuarioState"
       persistent
-      max-width="600px"
+      max-width="1000px"
     >
     <v-container>
       <v-card class="pa-3">

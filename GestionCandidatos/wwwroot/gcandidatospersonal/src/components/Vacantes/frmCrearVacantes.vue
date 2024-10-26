@@ -38,7 +38,6 @@
       register() {
         // Lógica para enviar los datos del formulario al servidor
         // Puedes usar Axios o cualquier otra librería para hacer la solicitud HTTP
-       // console.log('setcrearVacanteState', this.vacante, this.cantVacantes, this.salario);
           // Validar si los campos están llenos
         if (!this.info.vacante || !this.info.cantVacantes || !this.info.salario) {
           this.Message = 'Todos los campos son obligatorios.';

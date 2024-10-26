@@ -6,11 +6,14 @@
         <v-col cols="10"> <!-- Ajusta el tamaño de la columna para el título -->
             <v-card-title class="text-left;">{{ titulo }}</v-card-title> <!-- Añade 'text-left' para alinear el título a la izquierda -->
       </v-col>
-        <v-col>
-             <v-btn v-if="Permiso" @click="setcrearUsuarioState()" color="primary" class="float-right">
-                Crear Usuario
-            </v-btn>
-        </v-col>
+       <v-col class="d-flex justify-end"> <!-- Agrupa los botones en un solo contenedor y los alinea a la derecha -->
+        <v-btn v-if="PermisoFiltro" @click="setMostrarFiltro()" color="primary">
+            Filtrar
+        </v-btn>
+        <v-btn v-if="Permiso" @click="setcrearUsuarioState()" color="primary" class="ml-2">
+            Crear Usuario
+        </v-btn>
+    </v-col>
     </v-row>
   </div>
   </v-card>
@@ -27,10 +30,14 @@ export default {
     Permiso: {
       type: Boolean,
       required: true
-    }
+    },
+    PermisoFiltro:{
+      type: Boolean,
+      required: true
+    }, 
   },
   computed:{
-    ...mapMutations(['setcrearUsuarioState'])
+    ...mapMutations(['setcrearUsuarioState','setMostrarFiltro'])
   },
   methods: {
     

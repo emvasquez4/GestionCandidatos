@@ -30,14 +30,14 @@ const UsuariosService = {
     }
   },
   async updateUser(data){
-    return this.apiClient.post('${Controller}/updateUsuario', data);
+    return apiClient.post(API_ROUTES.USUARIOS.UPDATE, data);
   },
   getAll(FiltroInicial, FiltroSecundario){
     var param = {
       "FiltroPrincipal": FiltroInicial,
       "FiltroSecundario": FiltroSecundario
     }
-    return this.apiClient.post('${Controller}/GetAllUsuarios', param);
+    return apiClient.post(API_ROUTES.USUARIOS.GET_ALL, param);
   },
 };
 
