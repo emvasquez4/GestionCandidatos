@@ -17,6 +17,7 @@ export default new Vuex.Store({
     crearPermisoState: false,
     progEntrevistaState: false,
     mostrarFiltro: false,
+    crearEntrevistaState: false
   },  
   getters: {
     isLoggedIn: state => state.user.isLoggedIn,
@@ -49,7 +50,10 @@ export default new Vuex.Store({
     },
     setMostrarFiltro(state, newValue){
       state.mostrarFiltro = !state.mostrarFiltro
-    }
+    },
+    setcrearEntrevistaState(state, newValue){
+      state.crearEntrevistaState = !state.crearEntrevistaState
+    },
   },
   actions: {
    

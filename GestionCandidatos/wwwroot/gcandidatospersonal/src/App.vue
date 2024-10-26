@@ -9,9 +9,11 @@
 
 <script>
 import Barra from '../src/components/Comunes/Toolbar.vue'
+import Menu from '../src/components/Comunes/menu2.vue';
 export default {
   components: {
       Barra,
+      Menu
   },
   name: 'App',
 
@@ -20,3 +22,10 @@ export default {
   }),
 };
 </script>
+
+<style>
+/**esto es formato para el menu */
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: ant
+}
