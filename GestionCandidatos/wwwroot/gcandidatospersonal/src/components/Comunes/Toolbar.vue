@@ -24,13 +24,6 @@
         /> -->
       </div>
 
-      <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item" v-for="route in routes" :key="route.name">
-          <router-link :to="route.path" class="nav-link">{{ route.name }}</router-link>
-        </li>
-      </ul>
-    </nav>
 
       <v-spacer></v-spacer>
 
