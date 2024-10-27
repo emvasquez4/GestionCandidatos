@@ -1,7 +1,7 @@
 <template>
   <div>
    <Menu :menus="menus" />
-   <BotonTitulo titulo="Gestión de Permisos" :Permiso="nuevo" :PermisoFiltro="consultar" nombrebtn="Crear Permiso"/>
+   <BotonTitulo titulo="Gestión de Usuario-Rol" :Permiso="nuevo" :PermisoFiltro="consultar" nombrebtn="Crear Relacion"/>
     <v-slide-y-transition>
        <Filtros 
          v-if="consultar" 
@@ -34,7 +34,7 @@
    import {  mapState, mapMutations } from 'vuex';
    import BotonTitulo from '../components/Comunes/HeaderBoton.vue';
    import Filtros from '../components/Comunes/Filtros.vue';
-   import CrearUsuario from '../components/Permisos/frmPermisos.vue'
+   import CrearUsuario from '../components/UsuarioRol/UsuarioRol.vue'
    import TablaUsuario from '../components/Comunes/Tabla.vue'
    import Services from '../services/Services';
    import Menu from '../components/Comunes/Menu.vue';
@@ -59,9 +59,8 @@
          selectedUser: null,
          usuarios:[],
          headers:[
-           {text: 'Nombre del Permiso', value: 'codigo_permiso'},
-           {text: 'Descripcion', value: 'descripcion'},
-           {text: 'Estado', value: 'estado'},
+           {text: 'Codigo de Rol', value: 'codigo_rol'},
+           {text: 'Codigo de usuario', value: 'codigo_usuario'},
             { text: 'Acciones', value: 'acciones', sortable: false }
          ]
        }
@@ -93,7 +92,7 @@
      },
      filtrarUsuarios({filtro, valorFiltrado}) {
         this.loading = true;
-        Services.PermisosService.getAll(filtro, valorFiltrado)
+        Services.UsuariosRolesService.getAll(filtro, valorFiltrado)
          .then(response => {
            // Manejo de la respuesta exitosa
            this.usuarios = response.data;
