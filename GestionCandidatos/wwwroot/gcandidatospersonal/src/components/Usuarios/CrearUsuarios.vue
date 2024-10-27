@@ -7,16 +7,26 @@
     >
     <v-container>
       <v-card class="pa-3">
-        <v-card-title class="headline">REGISTRO</v-card-title>
-        <v-form>
+        <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR USUARIO' : 'REGISTRO' }}</v-card-title>
+          <v-card-title class="headline" v-if="isViewMode">DATOS DE USUARIO</v-card-title>
+        <v-form v-if="!isViewMode">
           <v-text-field label="Nombre" v-model="info.nombre" :rules="[rules.required]"></v-text-field>
           <v-text-field label="Apellido" v-model="info.apellido" :rules="[rules.required]"></v-text-field>
            <v-text-field label="Username" v-model="info.username"></v-text-field>
           <v-text-field label="Correo electrónico" v-model="info.email" :rules="[rules.required, rules.email]"></v-text-field>
           <v-text-field label="Contraseña" v-model="info.password" type="password" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Confirmar contraseña" v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
-          <v-btn color="primary" @click="register">Registrarse</v-btn>
-            <v-btn color="primary" @click="Cerrar">Cerrar</v-btn>
+          <v-text-field v-if="!isEditMode" label="Confirmar contraseña" v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
+          <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
+          <v-btn color="primary" @click="register">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
+        </v-form>
+        <v-form v-if="isViewMode">
+          <v-text-field label="Nombre" readonly v-model="info.nombre" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Apellido" readonly v-model="info.apellido" :rules="[rules.required]"></v-text-field>
+           <v-text-field label="Username" readonly v-model="info.username"></v-text-field>
+          <v-text-field label="Correo electrónico" readonly v-model="info.email" :rules="[rules.required, rules.email]"></v-text-field>
+          <v-text-field label="Contraseña" readonly v-model="info.password" type="password" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Confirmar contraseña" readonly v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
+          <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>
         </v-form>
       </v-card>
     </v-container>
@@ -43,6 +53,13 @@
 import { mapState, mapActions, mapMutations } from 'vuex';
 import Services from '../../services/Services';
 export default {
+  props: {
+      userInfo: {
+        type: Object,
+        default: () => ({})  // Pasar el usuario a editar cuando esté en modo edición
+      },
+     
+  },
   data() {
     return {
       info: {
@@ -67,9 +84,27 @@ export default {
   watch: {
     'info.nombre': 'generateUsername',
     'info.apellido': 'generateUsername',
+    userInfo: {
+        immediate: true,
+        handler(newVal) {
+          if (this.isEditMode || this.isViewMode) {
+            this.info = { ...newVal };  // Cargar datos del usuario en el formulario
+          }else{
+            this.$validator.resetAll();
+             this.info= {
+                nombre: '',
+                apellido: '',
+                email: '',
+                password: '',
+                password2: '',
+                username: null,
+              };
+          }
+        }
+      },
   },
   computed: {
-    ...mapState(['crearUsuarioState']),
+    ...mapState(['crearUsuarioState','isViewMode','isEditMode']),
     ...mapMutations(['setcrearUsuarioState'])
   },
   methods: {
@@ -88,8 +123,29 @@ export default {
           this.showError = true;
         });
     },
+    updateUser() {
+        // Lógica para actualizar el usuario
+        Services.UsuariosService.updateUser(this.info)
+          .then(response => {
+            this.Message = 'Usuario actualizado exitosamente';
+            this.showSuccess = true;
+            this.resetForm();
+          })
+          .catch(error => {
+            this.Message = error.response?.data?.message || 'Ocurrió un error al actualizar el usuario.';
+            this.showError = true;
+          });
+      },
+     saveUser() {
+        if (this.isEditMode) {
+          this.updateUser();
+        } else {
+          this.register();
+        }
+      },
     Cerrar(){
-       this.setcrearUsuarioState();
+      this.showError = false;
+        this.showSuccess = false;
        this.info= {
         nombre: '',
         apellido: '',
@@ -97,7 +153,8 @@ export default {
         password: '',
         password2: '',
         username: null,
-        }
+        };
+        this.setcrearUsuarioState();
     },
     generateUsername() {
       // Tomar las primeras tres letras del nombre y las primeras tres del apellido.

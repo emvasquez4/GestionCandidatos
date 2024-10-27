@@ -11,6 +11,8 @@ export default new Vuex.Store({
       isLoggedIn: false, //se encuentra logueado
       roles: [], //roles a manejar este usuario
     },
+    isEditMode: false,
+    isViewMode: false,
     menus:[],
     crearVacanteState: false,
     crearCandidatoState: false,
@@ -54,9 +56,15 @@ export default new Vuex.Store({
     setcrearEntrevistaState(state, newValue){
       state.crearEntrevistaState = !state.crearEntrevistaState
     },
+    setIsEditMode(state, newValue){
+      state.isEditMode = newValue
+    },
+    setIsViewMode(state, newValue){
+      state.isViewMode = newValue
+    }
   },
   actions: {
-   
+    
   },
   modules: {
   }

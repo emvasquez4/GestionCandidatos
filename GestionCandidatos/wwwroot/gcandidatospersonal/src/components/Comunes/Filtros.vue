@@ -12,21 +12,20 @@
               :items="opciones"
               v-model="filtroSeleccionado"
               label="Seleccione un filtro"
-              @change="aplicarFiltro"
             ></v-autocomplete>
           </v-col>
           <v-col v-if="mostrarCampoAdicional">
               <v-text-field
                 v-model="valorFiltro"
                 label="Ingrese el valor del filtro"
-                @input="aplicarFiltro"
               ></v-text-field>
           </v-col>
         </v-row>
         <div class="pa-4 text-end">
            <v-row>
-          <v-col>
-            <v-btn color="primary" @click="Cerrar">Cerrar</v-btn>
+          <v-col class="d-flex justify-end"> 
+            <v-btn class="ma-2" color="primary"  @click="aplicarFiltro()">Filtrar</v-btn>
+            <v-btn class="ma-2" color="primary" @click="Cerrar()">Cerrar</v-btn>
           </v-col>
         </v-row>
         </div>
@@ -52,6 +51,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       filtroSeleccionado: null,
     };
   },
@@ -64,9 +64,12 @@ export default {
   },
   methods: {
     aplicarFiltro() {
+      if(this.filtroSeleccionado != null || this.filtroSeleccionado != 'todos' && this.valorFiltro != null){
       this.$emit('filtrar', {
         filtro: this.filtroSeleccionado,
         valor: this.valorFiltro});
+      }
+      this.Cerrar();
     },
     Cerrar(){
       this.setMostrarFiltro();

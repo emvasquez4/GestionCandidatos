@@ -6,7 +6,7 @@
   
   <script>
   import ReporteEntrevista from '../components/Entrevistas/ReporteEntrevista.vue';
-  
+  import {  mapState, mapMutations } from 'vuex';
   export default {
     data(){
         return{

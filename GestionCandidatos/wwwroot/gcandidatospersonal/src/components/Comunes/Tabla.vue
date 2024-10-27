@@ -8,21 +8,21 @@
   >
     <template v-slot:item.acciones="{ item }">
       <v-btn
-        v-if="botones.consultar"
+        v-if="btnQry"
         icon
         @click="$emit('consultar', item)"
       >
         <v-icon>mdi-eye</v-icon>
       </v-btn>
       <v-btn
-        v-if="botones.editar"
+        v-if="btnEdit"
         icon
         @click="$emit('editar', item)"
       >
         <v-icon>mdi-pencil</v-icon>
       </v-btn>
       <v-btn
-        v-if="botones.eliminar"
+        v-if="btnDel"
         icon
         @click="$emit('eliminar', item)"
       >
@@ -44,6 +44,18 @@ export default {
       type: Array,
       required: true
     },
+     btnEdit:{
+      type: Boolean,
+      required: true
+    }, 
+    btnDel:{
+      type: Boolean,
+      required: true
+    }, 
+     btnQry:{
+      type: Boolean,
+      required: true
+    }, 
     botones: {
       type: Object,
       default: () => ({

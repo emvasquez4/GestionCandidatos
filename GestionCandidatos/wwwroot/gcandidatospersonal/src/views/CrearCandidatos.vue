@@ -8,7 +8,7 @@
    <script>
      import TablaCandidatos from '../components/Comunes/Tabla candidatos.vue'
      import frmCandidatos from '../components/Candidatos/frmCandidatos.vue'      
-   
+   import {  mapState, mapMutations } from 'vuex';
      export default {
       data(){
         return{

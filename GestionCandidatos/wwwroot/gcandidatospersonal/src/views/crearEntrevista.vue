@@ -8,7 +8,7 @@
    <script>
      import TablaEntrevista from '../components/Comunes/Tabla entrevista.vue'
      import frmEntrevista from '../components/Entrevistas/frmEntrevista.vue'    
-   
+   import {  mapState, mapMutations } from 'vuex';
      export default {
       data(){
         return{

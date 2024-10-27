@@ -8,7 +8,7 @@
    <script>
      import TablaPermisos from '../components/Comunes/Tabla Permisos.vue'
      import frmPermisos from '../components/Permisos/frmPermisos.vue'
-   
+   import {  mapState, mapMutations } from 'vuex';
      export default {
       data(){
         return{

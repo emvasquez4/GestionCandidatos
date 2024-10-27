@@ -10,8 +10,8 @@
         <v-btn v-if="PermisoFiltro" @click="setMostrarFiltro()" color="primary">
             Filtrar
         </v-btn>
-        <v-btn v-if="Permiso" @click="setcrearUsuarioState()" color="primary" class="ml-2">
-            Crear Usuario
+        <v-btn v-if="Permiso" @click="CrearUsuario()" color="primary" class="ml-2">
+            {{ nombrebtn }}
         </v-btn>
     </v-col>
     </v-row>
@@ -35,12 +35,20 @@ export default {
       type: Boolean,
       required: true
     }, 
+    nombrebtn:{
+      type: String,
+      required: true
+    },
   },
   computed:{
-    ...mapMutations(['setcrearUsuarioState','setMostrarFiltro'])
+    ...mapMutations(['setcrearUsuarioState','setMostrarFiltro','setIsViewMode','setIsViewMode'])
   },
   methods: {
-    
+    CrearUsuario(){
+      this.$store.commit('setIsEditMode', false);
+       this.$store.commit('setIsViewMode', false);
+       this.setcrearUsuarioState();
+    }
   }
 };
 </script>
