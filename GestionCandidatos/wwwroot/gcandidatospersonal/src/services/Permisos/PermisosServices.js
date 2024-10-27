@@ -3,11 +3,10 @@ import apiClient from '../Api/api';
 
 const  API_ROUTES = {
   PERMISOS: {
-    GET_ALL: 'Permisos/GetAllPermisos',
-    
-    ADD: 'Permisos/addPermiso',
-    UPDATE:`Permisos/updatePermiso/`,
-    DELETE: `Permisos/deletePermiso/`
+    GET_ALL: 'Permiso/GetAllPermisos',
+    ADD: 'Permiso/addPermisos',
+    UPDATE:`Permiso/updatePermiso/`,
+    DELETE: `Permiso/deletePermiso/`
   },
   // Agrega aquí más controladores y sus endpoints según sea necesario
 };
@@ -25,14 +24,14 @@ const PermisosService = {
     },
 
     async updatePermiso(data){
-        return this.apiClient.post('${Controller}/updatePermiso', data);
+        return apiClient.post(API_ROUTES.PERMISOS.UPDATE, data);
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
           "FiltroPrincipal": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
-        return this.apiClient.post('${Controller}/GetAllPermisos', param);
+        return apiClient.post(API_ROUTES.PERMISOS.GET_ALL, param);
       },
     };
     

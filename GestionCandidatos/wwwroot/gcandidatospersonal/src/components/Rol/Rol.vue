@@ -10,7 +10,7 @@
         <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR ROL' : 'REGISTRO' }}</v-card-title>
           <v-card-title class="headline" v-if="isViewMode">DATOS DE ROL</v-card-title>
         <v-form v-if="!isViewMode">
-          <v-text-field label="Permiso" v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Rol" v-model="info.codigo_rol" :rules="[rules.required]"></v-text-field>
           <v-text-field label="Descripcion" v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
             label="Estado"
@@ -23,7 +23,7 @@
           <v-btn color="primary" @click="saveUser">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
         </v-form>
         <v-form v-if="isViewMode">
-          <v-text-field label="Permiso" readonly v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="Rol" readonly v-model="info.codigo_rol" :rules="[rules.required]"></v-text-field>
           <v-text-field label="Descripcion" readonly v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
             label="Estado"
@@ -110,7 +110,7 @@ export default {
   },
   methods: {
     register() {
-     Services.PermisosService.addPermiso(this.info)
+     Services.RolesService.addRoles(this.info)
         .then(response => {
           // Manejo de la respuesta exitosa
            this.Message = response.data ;
@@ -125,7 +125,7 @@ export default {
     },
     updateUser() {
         // Lógica para actualizar el usuario
-        Services.PermisosService.updatePermiso(this.info)
+        Services.RolesService.updateRoles(this.info)
           .then(response => {
             this.Message = 'Usuario actualizado exitosamente';
             this.showSuccess = true;

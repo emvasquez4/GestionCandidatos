@@ -22,7 +22,7 @@ const UsuariosRolesService = {
     }
   },
   async updateUsuarioRole(data){
-    return this.apiClient.post('${Controller}/updateUsuario', data);
+    return this.apiClient.post(API_ROUTES.USERROL.UPDATE, data);
   },
   getAll(FiltroInicial, FiltroSecundario){
     try{

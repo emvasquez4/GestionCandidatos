@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import LoginForm from '../views/LoginForm.vue';
 import Users from '../views/CrearUsuario.vue';
+import Rol from '../views/Rol.vue';
+import UsuarioRol from '../views/UsuarioRol.vue';
 import Vacantes from '../views/CrearVacantes.vue';
 import Candidatos from '../views/CrearCandidatos.vue';
 import Permisos from '../views/CrearPermisos.vue';
@@ -34,6 +36,16 @@ const routes = [
     path: '/crearusuario',
     name: 'crearusuario',
     component: Users
+  },
+  {
+    path: '/crearrol',
+    name: 'crearrol',
+    component: Rol
+  },
+  {
+    path: '/crearusuariorol',
+    name: 'crearusuariorol',
+    component: UsuarioRol
   },
   {
     path: '/crearvacante',

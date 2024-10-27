@@ -10,27 +10,37 @@
         <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR ROL' : 'REGISTRO' }}</v-card-title>
           <v-card-title class="headline" v-if="isViewMode">DATOS DE ROL</v-card-title>
         <v-form v-if="!isViewMode">
-          <v-text-field label="Permiso" v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Descripcion" v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
-            label="Estado"
-            v-model="info.estado"
-            :items="Estados"
-            item-title="text"
-            item-value="value"
+            label="User"
+            v-model="info.codigo_usuario"
+            :items="Usuarios"
+            item-title="username"
+            item-value="id"
+          ></v-autocomplete>
+          <v-autocomplete
+            label="Permiso"
+            v-model="info.codigo_rol"
+            :items="Permisos"
+            item-title="codigo_rol"
+            item-value="codigo_rol"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
           <v-btn color="primary" @click="saveUser">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
         </v-form>
         <v-form v-if="isViewMode">
-          <v-text-field label="Permiso" readonly v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Descripcion" readonly v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
-            label="Estado"
-            v-model="info.estado"
-            :items="Estados"
-            item-title="text"
-            item-value="value"
+            label="User"
+            v-model="info.codigo_usuario"
+            :items="Usuarios"
+            item-title="username"
+            item-value="id"
+          ></v-autocomplete>
+          <v-autocomplete
+            label="Permiso"
+            v-model="info.codigo_rol"
+            :items="Permisos"
+            item-title="codigo_rol"
+            item-value="codigo_rol"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>
         </v-form>
@@ -78,6 +88,8 @@ export default {
       showSuccess: false,
       Message: null,
       Estados:[{text:'Activo',value:'A'},{text:'Inactivo',value:'I'}],
+      Usuarios:[],
+      Permisos:[],
       rules: 
       {
         required: value => !!value || 'Este campo es obligatorio',       
@@ -109,8 +121,32 @@ export default {
     ...mapMutations(['setcrearUsuarioState'])
   },
   methods: {
+    GetUser() {
+     Services.UsuariosService.getAll("TODOS","")
+        .then(response => {
+          // Manejo de la respuesta exitosa
+           this.Usuarios = response.data ;
+           console.log(this.Usuarios);
+          // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+        })
+        .catch(error => {
+          // Manejo de errores
+        });
+    },
+    GetPermisos() {
+     Services.RolesService.getAll("TODOS","")
+        .then(response => {
+          // Manejo de la respuesta exitosa
+           this.Permisos = response.data ;
+           console.log(this.Permisos);
+          // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+        })
+        .catch(error => {
+          // Manejo de errores
+        });
+    },
     register() {
-     Services.PermisosService.addPermiso(this.info)
+     Services.UsuariosRolesService.addUsuarioRole(this.info)
         .then(response => {
           // Manejo de la respuesta exitosa
            this.Message = response.data ;
@@ -125,7 +161,7 @@ export default {
     },
     updateUser() {
         // Lógica para actualizar el usuario
-        Services.PermisosService.updatePermiso(this.info)
+        Services.UsuariosRolesService.updateUsuarioRole(this.info)
           .then(response => {
             this.Message = 'Usuario actualizado exitosamente';
             this.showSuccess = true;
@@ -158,5 +194,9 @@ export default {
         this.setcrearUsuarioState();
     },
   },
+  created() {
+     this.GetUser();
+     this.GetPermisos();
+   },
 };
 </script>
