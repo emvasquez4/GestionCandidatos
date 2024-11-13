@@ -1,5 +1,6 @@
 <template>
  <div>
+  <Menu :menus="menus" />
   <BotonTitulo titulo="Gestión de vacantes" :Permiso="nuevo" :PermisoFiltro="consultar" nombrebtn="Crear vacante"/>
    <v-slide-y-transition>
       <Filtros 
@@ -8,19 +9,19 @@
         @filtrar="filtrarUsuarios" 
       />
     </v-slide-y-transition>
-  <CrearVacante 
+  <CrearUsuario 
     :userInfo="selectedUser"
   />
-   <Tabla 
+   <TablaUsuario 
    :headers="headers"
-   :items="vacantes"
+   :items="usuarios"
     :btnQry="consultar"
     :btnEdit="actualizar"
     :btnDel="eliminar"
      :loading="loading"
-    @consultar="consultarVacante"
-    @editar="editarVacante"
-    @eliminar="eliminarVacante"
+    @consultar="consultarUsuario"
+    @editar="editarUsuario"
+    @eliminar="eliminarUsuario"
    />
 
    <v-overlay :value="loading" absolute>
@@ -33,15 +34,17 @@
   import {  mapState, mapMutations } from 'vuex';
   import BotonTitulo from '../components/Comunes/HeaderBoton.vue';
   import Filtros from '../components/Comunes/Filtros.vue';
-  import CrearVacante from '../components/Vacantes/frmCrearVacantes.vue';
-  import Tabla from '../components/Comunes/Tabla.vue'
+  import CrearUsuario from '../components/Vacantes/frmCrearVacantes.vue'
+  import TablaUsuario from '../components/Comunes/Tabla.vue'
   import Services from '../services/Services';
+  import Menu from '../components/Comunes/Menu.vue';
   export default {
      components: {
       BotonTitulo,
       Filtros,
-      CrearVacante,
-      Tabla,
+      CrearUsuario,
+      TablaUsuario,
+      Menu,
     },
     data(){
       return {
@@ -54,7 +57,7 @@
         isEditMode: false,
         isViewMode: false,
         selectedUser: null,
-        vacantes:[],
+        usuarios:[],
         headers:[
           {text: 'id', value: 'id'},
           {text: 'usuario', value: 'username'},
@@ -66,13 +69,13 @@
       }
     },
      computed: {
-    ...mapState(['permisos', 'userId']),
+    ...mapState(['permisos', 'userId','menus']),
        ...mapMutations(['setcrearUsuarioState','setIsViewMode','setIsEditMode'])
     }, 
     methods: {
     async getPermisos() {
       try {
-         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'USER').
+         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'VACANTE').
          then(async response => {
             const permisos =  response.data
             this.nuevo = permisos.nuevo;
@@ -95,7 +98,8 @@
        Services.UsuariosService.getAll(filtro, valorFiltrado)
         .then(response => {
           // Manejo de la respuesta exitosa
-          this.vacantes = response.data;
+          this.usuarios = response.data;
+          console.log("usuarios", this.usuarios)
            this.Message = error.response?.data?.message || 'Se ha encontrado información.';
           this.showSuccess = true;
           // Puedes agregar cualquier acción que necesites tras el registro exitoso.
@@ -109,7 +113,7 @@
         this.loading = false;  // Ocultar el spinner
         });
     },
-    consultarVacante(item) {
+    consultarUsuario(item) {
        this.loading = true;
       this.$store.commit('setIsEditMode', false);
        this.$store.commit('setIsViewMode', true);
@@ -117,13 +121,13 @@
        this.setcrearUsuarioState;
         this.loading = false;
     },
-    editarVacante(item) {
+    editarUsuario(item) {
      this.$store.commit('setIsEditMode', true);
        this.$store.commit('setIsViewMode', false);
       this.selectedUser = { ...item };    // Cargar los datos del usuario seleccionado
       this.setcrearUsuarioState;
     },
-    eliminarVacante(item) {
+    eliminarUsuario(item) {
        
     }
   },

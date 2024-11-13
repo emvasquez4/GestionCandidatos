@@ -73,7 +73,7 @@
     methods: {
     async getPermisos() {
       try {
-         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'USER').
+         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'ROL').
          then(async response => {
             const permisos =  response.data
             this.nuevo = permisos.nuevo;

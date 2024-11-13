@@ -10,20 +10,35 @@
         <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR ROL' : 'REGISTRO' }}</v-card-title>
           <v-card-title class="headline" v-if="isViewMode">DATOS DE ROL</v-card-title>
         <v-form v-if="!isViewMode">
-          <v-autocomplete
-            label="User"
-            v-model="info.codigo_usuario"
-            :items="Usuarios"
-            item-title="username"
-            item-value="id"
-          ></v-autocomplete>
-          <v-autocomplete
-            label="Rol"
-            v-model="info.codigo_rol"
-            :items="Permisos"
-            item-title="descripcion"
-            item-value="codigo_rol"
-          ></v-autocomplete>
+          <v-row>
+            <v-col cols="5">
+                <v-select
+                v-model="info.codigo_rol"
+                :items="rolesDisponibles"
+                label="Seleccionar Rol"
+                item-value="codigo_rol"
+                item-text="descripcion"
+              ></v-select>
+            </v-col>
+          </v-row>
+          <div v-if="info.codigo_rol != null">
+            <v-simple-table>
+              <thead>
+                <tr>
+                  <th>Permiso</th>
+                  <th>Asignado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="permiso in Permisos" :key="permiso.codigo_permiso">
+                  <td>{{ permiso.descripcion }}</td>
+                  <td>
+                    <v-checkbox v-model="info.permisos" :value="permiso.codigo_permiso"></v-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </v-simple-table>
+  </div>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
           <v-btn color="primary" @click="saveUser">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
         </v-form>
@@ -33,14 +48,14 @@
             v-model="info.codigo_usuario"
             :items="Usuarios"
             item-title="username"
-            readonly
+            item-value="id"
           ></v-autocomplete>
           <v-autocomplete
             label="Permiso"
             v-model="info.codigo_rol"
             :items="Permisos"
-            item-title="descripcion"
-             readonly
+            item-title="codigo_rol"
+            item-value="codigo_rol"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>
         </v-form>
@@ -80,10 +95,10 @@ export default {
     return {
       info: {
       codigo_rol:'',
-      codigo_usuario:'',
-      descripcion: '',
-      estado: '',
+      permisos:[],
       },
+      selectedRol:null,
+      rolesDisponibles:[],
       dialog: false,
       showError: false,
       showSuccess: false,
@@ -91,6 +106,7 @@ export default {
       Estados:[{text:'Activo',value:'A'},{text:'Inactivo',value:'I'}],
       Usuarios:[],
       Permisos:[],
+      selectedPermisos:[],
       rules: 
       {
         required: value => !!value || 'Este campo es obligatorio',       
@@ -99,17 +115,17 @@ export default {
     };
   },
   watch: {
+    'info.nombre': 'generateUsername',
+    'info.apellido': 'generateUsername',
     userInfo: {
         immediate: true,
         handler(newVal) {
           if (this.isEditMode || this.isViewMode) {
             this.info = { ...newVal };  // Cargar datos del usuario en el formulario
-            console.log("info", this.info)
           }else{
             this.$validator.resetAll();
              this.info= {
                 codigo_rol:'',
-                codigo_usuario:'',
                 descripcion: '',
                 estado: '',
               };
@@ -119,7 +135,7 @@ export default {
   },
   computed: {
     ...mapState(['crearUsuarioState','isViewMode','isEditMode']),
-    ...mapMutations(['setcrearUsuarioState']),
+    ...mapMutations(['setcrearUsuarioState'])
   },
   methods: {
     GetUser() {
@@ -134,14 +150,24 @@ export default {
           // Manejo de errores
         });
     },
-    GetPermisos() {
+    GetRoles() {
      Services.RolesService.getAll("TODOS","")
         .then(response => {
           // Manejo de la respuesta exitosa
+           this.rolesDisponibles = response.data ;
+           console.log("rol", this.rolesDisponibles)
+          // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+        })
+        .catch(error => {
+          // Manejo de errores
+        });
+    },
+    GetPermisos() {
+     Services.PermisosService.getAll("TODOS","")
+        .then(response => {
+          // Manejo de la respuesta exitosa
            this.Permisos = response.data ;
-           console.log("permisos",this.Permisos);
-           var per = this.Permisos.find(s => s.codigo_rol == this.info.codigo_rol);
-           console.log("s", per)
+           console.log("rol", this.Permisos)
           // Puedes agregar cualquier acción que necesites tras el registro exitoso.
         })
         .catch(error => {
@@ -149,7 +175,7 @@ export default {
         });
     },
     register() {
-     Services.UsuariosRolesService.addUsuarioRole(this.info)
+     Services.RolesPermisosService.addRolesPermisos(this.info)
         .then(response => {
           // Manejo de la respuesta exitosa
            this.Message = response.data ;
@@ -164,7 +190,7 @@ export default {
     },
     updateUser() {
         // Lógica para actualizar el usuario
-        Services.UsuariosRolesService.updateUsuarioRole(this.info)
+        Services.RolesPermisosService.updateRolesPermisos(this.info)
           .then(response => {
             this.Message = 'Usuario actualizado exitosamente';
             this.showSuccess = true;
@@ -175,6 +201,8 @@ export default {
           });
       },
      saveUser() {
+      console.log(this.isEditMode);
+      console.log(this.isEditMode);
         if (this.isEditMode) {
           this.updateUser();
         } else {
@@ -185,17 +213,20 @@ export default {
       this.showError = false;
         this.showSuccess = false;
        this.info= {
-       codigo_rol:'',
-        codigo_usuario:'',
-        descripcion: '',
-        estado: 'A',
+        nombre: '',
+        apellido: '',
+        email: '',
+        password: '',
+        password2: '',
+        username: null,
         };
         this.setcrearUsuarioState();
     },
   },
   created() {
+    this.GetRoles();
+    this.GetPermisos();
      this.GetUser();
-     this.GetPermisos();
    },
 };
 </script>

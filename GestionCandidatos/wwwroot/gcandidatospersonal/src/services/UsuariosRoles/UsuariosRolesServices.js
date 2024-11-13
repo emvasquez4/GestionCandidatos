@@ -4,9 +4,9 @@ import apiClient from '../Api/api';
 const  API_ROUTES = {
   USERROL: {
     GET_ALL: 'Usuarios_Roles/GetAllUR',
-    ADD: 'Usuarios_Roles/addUsuario',
-    UPDATE:`Usuarios_Roles/updateUsuario/`,
-    DELETE: `Usuarios_Roles/deleteUsuario/`,
+    ADD: 'Usuarios_Roles/addUsuariosRoles',
+    UPDATE:`Usuarios_Roles/updateUsuariosRoles/`,
+    DELETE: `Usuarios_Roles/deleteUsuariosRoles/`,
     MENUS: 'Usuarios_Roles/GetUserRolePermiso',
     PERMISOS: 'Usuarios_Roles/getPermisosUsuarios'
   },

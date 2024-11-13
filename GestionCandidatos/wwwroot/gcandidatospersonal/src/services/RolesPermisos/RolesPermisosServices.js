@@ -3,11 +3,10 @@ import apiClient from '../Api/api';
 
 const  API_ROUTES = {
   ROLESPERMISOS: {
-    GET_ALL: 'RolesPermisos/GetAllRolesPermisos',
-    
-    ADD: 'RolesPermisos/addRolesPermisos',
-    UPDATE:`RolesPermisos/updateRolesPermisos/`,
-    DELETE: `RolesPermisos/deleteRolesPermisos/`
+    GET_ALL: 'Roles_Permisos/GetAllRolesPermisos',
+    ADD: 'Roles_Permisos/addRolesPermisos',
+    UPDATE:`Roles_Permisos/updateRolesPermisos/`,
+    DELETE: `Roles_Permisos/deleteRolesPermisos/`
   },
   // Agrega aquí más controladores y sus endpoints según sea necesario
 };

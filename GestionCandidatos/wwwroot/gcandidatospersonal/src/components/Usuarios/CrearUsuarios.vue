@@ -17,7 +17,7 @@
           <v-text-field label="Contraseña" v-model="info.password" type="password" :rules="[rules.required]"></v-text-field>
           <v-text-field v-if="!isEditMode" label="Confirmar contraseña" v-model="info.password2" type="password" :rules="[rules.required]"></v-text-field>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
-          <v-btn color="primary" @click="register">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
+          <v-btn color="primary" @click="saveUser">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
         </v-form>
         <v-form v-if="isViewMode">
           <v-text-field label="Nombre" readonly v-model="info.nombre" :rules="[rules.required]"></v-text-field>

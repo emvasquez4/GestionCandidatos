@@ -8,6 +8,7 @@ import UsuarioRol from '../views/UsuarioRol.vue';
 import Vacantes from '../views/CrearVacantes.vue';
 import Candidatos from '../views/CrearCandidatos.vue';
 import Permisos from '../views/CrearPermisos.vue';
+import RolPermiso from '../views/RolPermiso.vue';
 import ProgEntrevista from '../views/ProgramarEntrevista.vue';
 import Entrevista from '../views/crearEntrevista.vue';
 //reportes
@@ -61,6 +62,11 @@ const routes = [
     path: '/crearpermisos',
     name: 'crearpermisos',
     component: Permisos
+  },
+  {
+    path: '/crearrolpermiso',
+    name: 'crearrolpermiso',
+    component: RolPermiso
   },
   {
     path: '/progEntrevista',

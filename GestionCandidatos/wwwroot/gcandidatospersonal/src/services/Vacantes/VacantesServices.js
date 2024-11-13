@@ -4,17 +4,16 @@ import apiClient from '../Api/api';
 const  API_ROUTES = {
   VACANTES: {
     GET_ALL: 'Vacantes/GetAllVacantes',
-    
-    ADD: 'Vacantes/addVacante',
-    UPDATE:`Vacantes/updateVacante/`,
-    DELETE: `Vacantes/deleteVacante/`
+    ADD: 'Vacantes/addVacantes',
+    UPDATE:`Vacantes/UpdateVacante`,
+    DELETE: `Vacantes/deleteVacantes`
   },
   // Agrega aquí más controladores y sus endpoints según sea necesario
 };
 
 const VacantesService = {
     
-    async addVacantes(Vacantes) {
+    async addVacantes(vacantes) {
       try {
         return apiClient.post(API_ROUTES.VACANTES.ADD, vacantes);;
       } catch (error) {
@@ -23,14 +22,14 @@ const VacantesService = {
       }
     },
     async updateVacantes(data){
-        return this.apiClient.post('${Controller}/updateVacantes', data);
+        returnapiClient.post(API_ROUTES.VACANTES.UPDATE, data);
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
           "FiltroPrincipal": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
-        return this.apiClient.post('${Controller}/GetAllVacantes', param);
+        return apiClient.post(API_ROUTES.VACANTES.GET_ALL, param);
       },
     };
     
