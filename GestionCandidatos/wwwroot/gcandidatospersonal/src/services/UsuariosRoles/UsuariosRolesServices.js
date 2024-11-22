@@ -27,7 +27,7 @@ const UsuariosRolesService = {
   getAll(FiltroInicial, FiltroSecundario){
     try{
       var param = {
-        "FiltroPrincipal": FiltroInicial,
+        "FiltroPrimario": FiltroInicial,
         "FiltroSecundario": FiltroSecundario
       }
       return apiClient.post(API_ROUTES.USERROL.GET_ALL, param);
@@ -40,7 +40,7 @@ const UsuariosRolesService = {
   async getUserRolPermiso(FiltroInicial, FiltroSecundario){
     try{
       var param = {
-        "FiltroPrincipal": FiltroInicial,
+        "FiltroPrimario": FiltroInicial,
         "FiltroSecundario": FiltroSecundario
       }
       return await apiClient.post(API_ROUTES.USERROL.MENUS, param);
@@ -53,7 +53,7 @@ const UsuariosRolesService = {
   async getUserPermiso(FiltroInicial, FiltroSecundario, FiltroTerciario){
     try{
       var param = {
-        "FiltroPrincipal": FiltroInicial,
+        "FiltroPrimario": FiltroInicial,
         "FiltroSecundario": FiltroSecundario,
         "FiltroTerciario": FiltroTerciario
       }

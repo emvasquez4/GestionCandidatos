@@ -126,11 +126,17 @@
      },
      eliminarUsuario(item) {
         
-     }
+     },
+     resetAllStates() { 
+      this.$store.dispatch('resetStates'); 
+    } 
    },
    created() {
      this.getPermisos();
-   },
+   }, 
+   mounted() {
+     this.resetAllStates(); 
+     }
    }
  </script>
  

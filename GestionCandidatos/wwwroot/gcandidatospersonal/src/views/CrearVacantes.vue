@@ -59,9 +59,9 @@
         selectedUser: null,
         usuarios:[],
         headers:[
-          {text: 'id', value: 'id'},
-          {text: 'usuario', value: 'username'},
-          {text: 'nombres', value: 'nombre'},
+          {text: 'id', value: 'codigo_vacante'},
+          {text: 'codigo de puesto', value: 'codigo_puesto'},
+          {text: 'nombres', value: 'cantidad_puestos'},
           {text: 'apellido', value: 'apellido'},
           {text: 'Estado', value: 'estado'},
            { text: 'Acciones', value: 'acciones', sortable: false }
@@ -95,7 +95,7 @@
     },
     filtrarUsuarios({filtro, valorFiltrado}) {
        this.loading = true;
-       Services.UsuariosService.getAll(filtro, valorFiltrado)
+       Services.VacantesService.getAll(filtro, valorFiltrado)
         .then(response => {
           // Manejo de la respuesta exitosa
           this.usuarios = response.data;
@@ -129,10 +129,16 @@
     },
     eliminarUsuario(item) {
        
-    }
+    },
+    resetAllStates() { 
+      this.$store.dispatch('resetStates'); 
+    } 
   },
   created() {
     this.getPermisos();
   },
+   mounted() {
+     this.resetAllStates(); 
+     }
   }
 </script>

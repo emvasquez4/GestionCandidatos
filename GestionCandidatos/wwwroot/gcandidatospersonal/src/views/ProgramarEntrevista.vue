@@ -51,6 +51,13 @@
             }
         }
       },
-
+      methods: { 
+    resetAllStates() { 
+      this.$store.dispatch('resetStates'); 
+    } 
+  }, 
+   mounted() {
+     this.resetAllStates(); 
+     }
      }
    </script>

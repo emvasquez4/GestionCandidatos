@@ -28,7 +28,7 @@ const PermisosService = {
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
-          "FiltroPrincipal": FiltroInicial,
+          "FiltroPrimario": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
         return apiClient.post(API_ROUTES.PERMISOS.GET_ALL, param);

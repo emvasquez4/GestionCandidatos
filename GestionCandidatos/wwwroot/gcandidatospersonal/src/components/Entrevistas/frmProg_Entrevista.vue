@@ -9,7 +9,13 @@
           <v-card class="pa-3">
             <v-card-title class="headline"><b>PROGRAMAR ENTREVISTA</b></v-card-title>
             <v-form>
-              <v-text-field label="Candidato" v-model="info.candidato" :rules="[rules.required, rules.noNumbers]"></v-text-field>
+               <v-autocomplete
+                label="Candidato"
+                v-model="info.codigo_candidato"
+                :items="Candidatos"
+                item-title="nombrecompleto"
+                item-value="codigo_candidato"
+              ></v-autocomplete>
               <v-text-field label="Fecha" v-model="info.fecha" type="date" :rules="[rules.required]"></v-text-field>
               <v-text-field label="Hora" v-model="info.hora" type="time" :rules="[rules.required]" @blur="formatTime"></v-text-field>
               
@@ -26,9 +32,9 @@
   </template>
   
   <script>
+  import { mapState, mapActions, mapMutations } from 'vuex';
   import Services from '../../services/Services';
-  export default 
-  {
+  export default {
     data() {
       return {
         info:{
@@ -42,9 +48,14 @@
         noNumbers: value => /^[a-zA-Z\s]*$/.test(value) || 'El campo no debe contener números',
         noLetters: value => /^[0-9]*$/.test(value) || 'El campo no debe contener letras'
         }  
-      }      
+        },
+        Candidatos:[],     
       };
     },
+    computed: {
+    ...mapState(['crearUsuarioState','isViewMode','isEditMode']),
+    ...mapMutations(['setcrearUsuarioState']),
+  },
     methods: 
     {
       guardar() 
@@ -93,7 +104,18 @@
         }
         this.hora = `${hours.toString().padStart(2, '0')}:${minutes}`;
       }
-    }
+      },
+      CargarCantidatos(){
+        Services.CandidatosService.getAll("TODOSP","")
+        .then(response => {
+          // Manejo de la respuesta exitosa
+           this.Candidatos = response.data ;
+          // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+        })
+        .catch(error => {
+          // Manejo de errores
+        });
+      }
   }
   };
   </script>

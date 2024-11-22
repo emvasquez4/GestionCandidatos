@@ -15,7 +15,7 @@
             v-model="info.codigo_usuario"
             :items="Usuarios"
             item-title="username"
-            item-value="id"
+            item-value="username"
           ></v-autocomplete>
           <v-autocomplete
             label="Rol"
@@ -79,8 +79,8 @@ export default {
   data() {
     return {
       info: {
-      codigo_rol:'',
-      codigo_usuario:'',
+      codigo_rol:null,
+      codigo_usuario:null,
       descripcion: '',
       estado: '',
       },

@@ -5,7 +5,7 @@ const  API_ROUTES = {
   VACANTES: {
     GET_ALL: 'Vacantes/GetAllVacantes',
     ADD: 'Vacantes/addVacantes',
-    UPDATE:`Vacantes/UpdateVacante`,
+    UPDATE:`Vacantes/updateVacante`,
     DELETE: `Vacantes/deleteVacantes`
   },
   // Agrega aquí más controladores y sus endpoints según sea necesario
@@ -26,7 +26,7 @@ const VacantesService = {
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
-          "FiltroPrincipal": FiltroInicial,
+          "FiltroPrimario": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
         return apiClient.post(API_ROUTES.VACANTES.GET_ALL, param);

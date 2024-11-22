@@ -151,6 +151,14 @@
    created() {
      this.getPermisos();
    },
+   methods: { 
+    resetAllStates() { 
+      this.$store.dispatch('resetStates'); 
+    } 
+  }, 
+   mounted() {
+     this.resetAllStates(); 
+     }
    }
  </script>
  

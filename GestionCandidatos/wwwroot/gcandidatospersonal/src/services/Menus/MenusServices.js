@@ -27,7 +27,7 @@ const MenusService = {
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
-          "FiltroPrincipal": FiltroInicial,
+          "FiltroPrimario": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
         return this.apiClient.post('${Controller}/GetAllMenus', param);

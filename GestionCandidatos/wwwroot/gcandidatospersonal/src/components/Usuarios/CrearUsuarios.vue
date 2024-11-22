@@ -113,13 +113,14 @@ export default {
         .then(response => {
           // Manejo de la respuesta exitosa
           var creacion = response.data;
-           this.Message = error.response?.data?.message || 'Se ha creado el usuario exitosamente.';
+          console.log("MM")
+           this.Message =response?.data?.message || 'Se ha creado el usuario exitosamente.';
           this.showSuccess = true;
           // Puedes agregar cualquier acción que necesites tras el registro exitoso.
         })
         .catch(error => {
           // Manejo de errores
-          this.Message = error.response?.data?.message || 'Ocurrió un error al registrar el usuario.';
+          this.Message = response?.data?.message || 'Ocurrió un error al registrar el usuario.';
           this.showError = true;
         });
     },

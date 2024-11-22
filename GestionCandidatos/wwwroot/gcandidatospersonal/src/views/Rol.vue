@@ -14,7 +14,7 @@
   />
    <TablaUsuario 
    :headers="headers"
-   :items="usuarios"
+   :items="roles"
     :btnQry="consultar"
     :btnEdit="actualizar"
     :btnDel="eliminar"
@@ -57,7 +57,7 @@
         isEditMode: false,
         isViewMode: false,
         selectedUser: null,
-        usuarios:[],
+        //usuarios:[],
         headers:[
           {text: 'Nombre del Rol', value: 'codigo_rol'},
           {text: 'Descripcion', value: 'descripcion'},
@@ -67,8 +67,8 @@
       }
     },
      computed: {
-    ...mapState(['permisos', 'userId','menus']),
-       ...mapMutations(['setcrearUsuarioState','setIsViewMode','setIsEditMode'])
+    ...mapState(['permisos', 'userId','menus','roles']),
+       ...mapMutations(['setcrearUsuarioState','setIsViewMode','setIsEditMode','SET_ROLES'])
     }, 
     methods: {
     async getPermisos() {
@@ -96,7 +96,8 @@
        Services.RolesService.getAll(filtro, valorFiltrado)
         .then(response => {
           // Manejo de la respuesta exitosa
-          this.usuarios = response.data;
+           this.$store.commit('SET_ROLES', response.data);
+          //this.usuarios = response.data;
           console.log("usuarios", this.usuarios)
            this.Message = error.response?.data?.message || 'Se ha encontrado información.';
           this.showSuccess = true;
@@ -127,10 +128,16 @@
     },
     eliminarUsuario(item) {
        
-    }
+    },
+    resetAllStates() { 
+      this.$store.dispatch('resetStates'); 
+    } 
   },
   created() {
     this.getPermisos();
   },
+   mounted() {
+     this.resetAllStates(); 
+     }
   }
 </script>

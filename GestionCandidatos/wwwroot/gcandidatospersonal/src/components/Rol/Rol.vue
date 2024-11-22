@@ -106,7 +106,7 @@ export default {
   },
   computed: {
     ...mapState(['crearUsuarioState','isViewMode','isEditMode']),
-    ...mapMutations(['setcrearUsuarioState'])
+    ...mapMutations(['setcrearUsuarioState','SET_ROLES'])
   },
   methods: {
     register() {
@@ -129,6 +129,26 @@ export default {
           .then(response => {
             this.Message = 'Usuario actualizado exitosamente';
             this.showSuccess = true;
+
+              Services.RolesService.getAll("TODOS", "")
+                .then(response => {
+                  // Manejo de la respuesta exitosa
+                  this.$store.commit('SET_ROLES', response.data);
+                  //this.usuarios = response.data;
+                  this.Message = error.response?.data?.message || 'Se ha encontrado información.';
+                  this.showSuccess = true;
+                   this.setcrearUsuarioState();
+                  // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+                })
+                .catch(error => {
+                  // Manejo de errores
+                  this.Message = error.response?.data?.message || 'Ocurrió un error al registrar el usuario.';
+                  this.showError = true;
+                })
+                .finally(() => {
+                this.loading = false;  // Ocultar el spinner
+                });
+
           })
           .catch(error => {
             this.Message = error.response?.data?.message || 'Ocurrió un error al actualizar el usuario.';

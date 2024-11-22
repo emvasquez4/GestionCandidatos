@@ -5,7 +5,7 @@ const  API_ROUTES = {
   ROLES: {
     GET_ALL: 'Roles/GetAllRoles',
     ADD: 'Roles/addRoles',
-    UPDATE:`Roles/updateRol/`,
+    UPDATE:`Roles/updateRoles/`,
     DELETE: `Roles/deleteRoles/`
   },
   // Agrega aquí más controladores y sus endpoints según sea necesario
@@ -25,7 +25,7 @@ async updateRoles(data){
   },
   getAll(FiltroInicial, FiltroSecundario){
     var param = {
-      "FiltroPrincipal": FiltroInicial,
+      "FiltroPrimario": FiltroInicial,
       "FiltroSecundario": FiltroSecundario
     }
     return apiClient.post(API_ROUTES.ROLES.GET_ALL, param);

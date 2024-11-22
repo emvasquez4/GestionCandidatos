@@ -30,11 +30,16 @@ const UsuariosService = {
     }
   },
   async updateUser(data){
+    try{
     return apiClient.post(API_ROUTES.USUARIOS.UPDATE, data);
+    }catch (error) {
+      console.error('Error actualizando usuario:', error);
+      throw error;
+    }
   },
   getAll(FiltroInicial, FiltroSecundario){
     var param = {
-      "FiltroPrincipal": FiltroInicial,
+      "FiltroPrimario": FiltroInicial,
       "FiltroSecundario": FiltroSecundario
     }
     return apiClient.post(API_ROUTES.USUARIOS.GET_ALL, param);
