@@ -136,7 +136,7 @@
      this.getPermisos();
    }, 
    mounted() {
-     this.resetAllStates(); 
+     //this.resetAllStates(); 
      }
    }
  </script>

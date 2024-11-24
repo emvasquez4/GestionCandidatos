@@ -7,29 +7,43 @@
     >
     <v-container>
       <v-card class="pa-3">
-        <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR ROL' : 'REGISTRO' }}</v-card-title>
-          <v-card-title class="headline" v-if="isViewMode">DATOS DE ROL</v-card-title>
+        <v-card-title class="headline" v-if="!isViewMode">{{ isEditMode ? 'ACTUALIZAR Entrevista' : 'REGISTRO' }}</v-card-title>
+          <v-card-title class="headline" v-if="isViewMode">DATOS DE LA ENTREVISTA</v-card-title>
         <v-form v-if="!isViewMode">
-          <v-text-field label="Permiso" v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Descripcion" v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="codigo de entrevista *(numero)" v-model="info.codigo_entrevista" :rules="[rules.required]"></v-text-field>
+          <v-autocomplete
+            label="Candidatos"
+            v-model="info.codigo_candidato"
+            :items="Candidatos"
+            item-text='nombre'
+            item-value='codigo_candidato'
+          ></v-autocomplete>
+          <v-text-field label="Encargado" v-model="info.encargado" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
             label="Estado"
             v-model="info.estado"
             :items="Estados"
-            item-text="text"
+            item-title="text"
             item-value="value"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
           <v-btn color="primary" @click="saveUser">{{ isEditMode ? 'Actualizar' : 'Registrar' }}</v-btn>
         </v-form>
         <v-form v-if="isViewMode">
-          <v-text-field label="Permiso" readonly v-model="info.codigo_permiso" :rules="[rules.required]"></v-text-field>
-          <v-text-field label="Descripcion" readonly v-model="info.descripcion" :rules="[rules.required]"></v-text-field>
+          <v-text-field label="codigo de entrevista" v-model="info.codigo_entrevista" :rules="[rules.required]"></v-text-field>
+          <v-autocomplete
+            label="Candidatos"
+            v-model="info.codigo_candidato"
+            :items="Candidatos"
+            item-text='nombre'
+            item-value='codigo_candidato'
+          ></v-autocomplete>
+          <v-text-field label="Encargado" v-model="info.encargado" :rules="[rules.required]"></v-text-field>
           <v-autocomplete
             label="Estado"
             v-model="info.estado"
             :items="Estados"
-            item-text="text"
+            item-title="text"
             item-value="value"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>
@@ -78,6 +92,7 @@ export default {
       showSuccess: false,
       Message: null,
       Estados:[{text:'Activo',value:'A'},{text:'Inactivo',value:'I'}],
+      Candidatos:[{}],
       rules: 
       {
         required: value => !!value || 'Este campo es obligatorio',       
@@ -110,7 +125,7 @@ export default {
   },
   methods: {
     register() {
-     Services.PermisosService.addPermiso(this.info)
+     Services.EntrevistasService.addEntrevista(this.info)
         .then(response => {
           // Manejo de la respuesta exitosa
            this.Message = response.data ;
@@ -119,19 +134,19 @@ export default {
         })
         .catch(error => {
           // Manejo de errores
-          this.Message = error.response?.data?.message || 'Ocurrió un error al registrar el usuario.';
+          this.Message = error.response?.data?.message || 'Ocurrió un error al registrar el Entrevista.';
           this.showError = true;
         });
     },
     updateUser() {
         // Lógica para actualizar el usuario
-        Services.PermisosService.updatePermiso(this.info)
+        Services.EntrevistasService.updateEntrevista(this.info)
           .then(response => {
-            this.Message = 'Usuario actualizado exitosamente';
+            this.Message = 'Entrevista actualizado exitosamente';
             this.showSuccess = true;
           })
           .catch(error => {
-            this.Message = error.response?.data?.message || 'Ocurrió un error al actualizar el usuario.';
+            this.Message = error.response?.data?.message || 'Ocurrió un error al actualizar el Entrevista.';
             this.showError = true;
           });
       },
@@ -144,6 +159,22 @@ export default {
           this.register();
         }
       },
+      
+    GetCandidatos() {
+      console.log("Entra metodo busqueda ");
+     Services.CandidatosService.getAll("TODOS","")
+        .then(response => {
+          // Manejo de la respuesta exitosa
+           this.Candidatos = response.data ;
+           console.log("candidatos",this.Candidatos);
+           console.log("candidatos !!!!!!!!!!!!!!");
+           console.log(this.Candidatos);
+          // Puedes agregar cualquier acción que necesites tras el registro exitoso.
+        })
+        .catch(error => {
+          // Manejo de errores
+        });
+    },
     Cerrar(){
       this.showError = false;
         this.showSuccess = false;
@@ -158,5 +189,8 @@ export default {
         this.setcrearUsuarioState();
     },
   },
+  created() {
+     this.GetCandidatos();
+   },
 };
 </script>

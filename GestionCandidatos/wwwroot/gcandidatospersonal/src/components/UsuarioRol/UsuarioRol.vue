@@ -14,14 +14,14 @@
             label="User"
             v-model="info.codigo_usuario"
             :items="Usuarios"
-            item-title="username"
+            item-text="username"
             item-value="username"
           ></v-autocomplete>
           <v-autocomplete
             label="Rol"
             v-model="info.codigo_rol"
             :items="Permisos"
-            item-title="descripcion"
+            item-text="descripcion"
             item-value="codigo_rol"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
@@ -32,14 +32,14 @@
             label="User"
             v-model="info.codigo_usuario"
             :items="Usuarios"
-            item-title="username"
+            item-text="username"
             readonly
           ></v-autocomplete>
           <v-autocomplete
             label="Permiso"
             v-model="info.codigo_rol"
             :items="Permisos"
-            item-title="descripcion"
+            item-text="descripcion"
              readonly
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>

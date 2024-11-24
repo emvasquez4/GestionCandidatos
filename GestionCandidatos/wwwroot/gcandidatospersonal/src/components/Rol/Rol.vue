@@ -16,7 +16,7 @@
             label="Estado"
             v-model="info.estado"
             :items="Estados"
-            item-title="text"
+            item-text="text"
             item-value="value"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar">Cerrar</v-btn>
@@ -29,7 +29,7 @@
             label="Estado"
             v-model="info.estado"
             :items="Estados"
-            item-title="text"
+            item-text="text"
             item-value="value"
           ></v-autocomplete>
           <v-btn color="secondary" @click="Cerrar()">Cerrar</v-btn>

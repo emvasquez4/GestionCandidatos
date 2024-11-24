@@ -93,7 +93,7 @@ export default new Vuex.Store({
       commit('setcrearCandidatoState', false); 
       commit('setcrearPermisoState', false); 
       commit('setprogEntrevistaState', false);
-       commit('setMostrarFiltro', false); 
+      commit('setMostrarFiltro', false); 
       commit('setcrearEntrevistaState', false); 
     }
   },

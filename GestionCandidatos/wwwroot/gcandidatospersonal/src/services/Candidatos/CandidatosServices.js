@@ -22,17 +22,17 @@ const CandidatosService = {
       }
     },
 async updateCandidato(data){
-    return this.apiClient.post(API_ROUTES.CANDIDATOS.UPDATE, data);
+    return apiClient.post(API_ROUTES.CANDIDATOS.UPDATE, data);
   },
   async deleteCandidato(data){
-    return this.apiClient.post(API_ROUTES.CANDIDATOS.DELETE, data);
+    return apiClient.post(API_ROUTES.CANDIDATOS.DELETE, data);
   },
   getAll(FiltroInicial, FiltroSecundario){
     var param = {
       "FiltroPrimario": FiltroInicial,
       "FiltroSecundario": FiltroSecundario
     }
-    return this.apiClient.post(API_ROUTES.CANDIDATOS.GET_ALL, param);
+    return apiClient.post(API_ROUTES.CANDIDATOS.GET_ALL, param);
   },
 };
 

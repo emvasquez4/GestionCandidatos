@@ -34,7 +34,7 @@
   import {  mapState, mapMutations } from 'vuex';
   import BotonTitulo from '../components/Comunes/HeaderBoton.vue';
   import Filtros from '../components/Comunes/Filtros.vue';
-  import CrearEntrevistas from '../components/Entrevistas/frmEntrevista.vue'
+  import CrearEntrevistas from '../components/Entrevistas/Entrevista.vue'
   import TablaUsuario from '../components/Comunes/Tabla.vue'
   import Services from '../services/Services';
   import Menu from '../components/Comunes/Menu.vue';
@@ -59,10 +59,9 @@
         selectedUser: null,
         usuarios:[],
         headers:[
-          {text: 'id', value: 'id'},
-          {text: 'usuario', value: 'username'},
-          {text: 'nombres', value: 'nombre'},
-          {text: 'apellido', value: 'apellido'},
+          {text: 'Codigo Entrevista', value: 'codigo_entrevista'},
+          {text: 'Codigo Candidato', value: 'codigo_candidato'},
+          {text: 'Encargado', value: 'encargado'},
           {text: 'Estado', value: 'estado'},
            { text: 'Acciones', value: 'acciones', sortable: false }
         ]
@@ -75,7 +74,7 @@
     methods: {
     async getPermisos() {
       try {
-         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'ENTREVISTAS').
+         await Services.UsuariosRolesService.getUserPermiso('CODUSUARIO', this.userId.toString(), 'ENTREVISTA').
          then(async response => {
             const permisos =  response.data
             this.nuevo = permisos.nuevo;
@@ -95,7 +94,7 @@
     },
     filtrarUsuarios({filtro, valorFiltrado}) {
        this.loading = true;
-       Services.UsuariosService.getAll(filtro, valorFiltrado)
+       Services.EntrevistasService.getAll(filtro, valorFiltrado)
         .then(response => {
           // Manejo de la respuesta exitosa
           this.usuarios = response.data;
@@ -138,7 +137,7 @@
     this.getPermisos();
   },
    mounted() {
-     this.resetAllStates(); 
+     //this.resetAllStates(); 
      }
   }
 </script>

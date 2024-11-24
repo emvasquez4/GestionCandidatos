@@ -4,7 +4,6 @@ import apiClient from '../Api/api';
 const  API_ROUTES = {
   ENTREVISTAS: {
     GET_ALL: 'Entrevistas/GetAllEntrevistas',
-    
     ADD: 'Entrevistas/addEntrevista',
     UPDATE:`Entrevistas/updateEntrevista/`,
     DELETE: `Entrevistas/deleteEntrevista/`
@@ -23,14 +22,14 @@ const EntrevistasService = {
       }
     },
     async updateEntrevista(data){
-        return this.apiClient.post('${Controller}/updateEntrevista', data);
+        return apiClient.post(API_ROUTES.ENTREVISTAS.UPDATE, data);
       },
       getAll(FiltroInicial, FiltroSecundario){
         var param = {
           "FiltroPrimario": FiltroInicial,
           "FiltroSecundario": FiltroSecundario
         }
-        return this.apiClient.post('${Controller}/GetAllEntrevistas', param);
+        return apiClient.post(API_ROUTES.ENTREVISTAS.GET_ALL, param);
       },
     };
     
